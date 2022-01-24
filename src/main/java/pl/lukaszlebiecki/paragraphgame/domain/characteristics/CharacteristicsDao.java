@@ -61,7 +61,8 @@ public class CharacteristicsDao extends BaseDao {
         int hitpoints = set.getInt("hitpoints");
         int sanity = set.getInt("sanity");
         int luck = set.getInt("luck");
+        int magic_point = set.getInt("magic_point");
         return new Characteristics(users_id, strength, skill, power, condition, appearance, education, physique, intelligence,
-                moverate, hitpoints, sanity, luck);
+                moverate, hitpoints, sanity, luck, magic_point );
     }
 }

@@ -13,10 +13,11 @@ public class CharacteristicsBasicInfo {
     private Integer hitPoints;
     private Integer sanity;
     private Integer luck;
+    private Integer magic_point;
 
     public CharacteristicsBasicInfo(Integer strength, Integer skill, Integer power, Integer condition,
                                     Integer appearance, Integer education, Integer physique, Integer intelligence,
-                                    Integer moveRate, Integer hitPoints, Integer sanity, Integer luck) {
+                                    Integer moveRate, Integer hitPoints, Integer sanity, Integer luck, Integer magic_point) {
         this.strength = strength;
         this.skill = skill;
         this.power = power;
@@ -29,6 +30,7 @@ public class CharacteristicsBasicInfo {
         this.hitPoints = hitPoints;
         this.sanity = sanity;
         this.luck = luck;
+        this.magic_point = magic_point;
     }
 
     public Integer getStrength() {
@@ -77,5 +79,9 @@ public class CharacteristicsBasicInfo {
 
     public Integer getLuck() {
         return luck;
+    }
+
+    public Integer getMagic_point() {
+        return magic_point;
     }
 }

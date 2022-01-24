@@ -14,10 +14,11 @@ public class Characteristics {
     private Integer hitPoints;
     private Integer sanity;
     private Integer luck;
+    private Integer magic_point;
 
     public Characteristics(Integer userId, Integer strength, Integer skill, Integer power, Integer condition,
                            Integer appearance, Integer education, Integer physique, Integer intelligence,
-                           Integer moveRate, Integer hitPoints, Integer sanity, Integer luck) {
+                           Integer moveRate, Integer hitPoints, Integer sanity, Integer luck, Integer magic_point) {
         this.userId = userId;
         this.strength = strength;
         this.skill = skill;
@@ -31,6 +32,15 @@ public class Characteristics {
         this.hitPoints = hitPoints;
         this.sanity = sanity;
         this.luck = luck;
+        this.magic_point = magic_point;
+    }
+
+    public Integer getMagic_point() {
+        return magic_point;
+    }
+
+    public void setMagic_point(Integer magic_point) {
+        this.magic_point = magic_point;
     }
 
     public Integer getUserId() {

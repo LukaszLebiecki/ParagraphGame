@@ -148,6 +148,10 @@
                             <label for="luck" class="title2">Szczęście</label>
                             <input class="cech-point" placeholder="${requestScope.characteristics.luck}" type="number" name="luck" id="luck" min="0" max="99">
                         </div>
+                        <div>
+                            <label for="magic_points" class="title2">Punkty magii</label>
+                            <input class="cech-point" placeholder="${requestScope.characteristics.luck}" type="number" name="magic_points" id="magic_points" min="0" max="24">
+                        </div>
                     </div>
                     <div>
                         <h3>UMIEJĘTNOŚCI</h3>

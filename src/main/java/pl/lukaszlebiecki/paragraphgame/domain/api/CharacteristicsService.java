@@ -24,7 +24,8 @@ public class CharacteristicsService {
                    c.getMoveRate(),
                    c.getHitPoints(),
                    c.getSanity(),
-                   c.getLuck()
+                   c.getLuck(),
+                   c.getMagic_point()
            );
         }
     }
