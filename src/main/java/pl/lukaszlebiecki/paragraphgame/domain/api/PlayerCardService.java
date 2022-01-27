@@ -3,9 +3,6 @@ package pl.lukaszlebiecki.paragraphgame.domain.api;
 import pl.lukaszlebiecki.paragraphgame.domain.playerCard.PlayerCard;
 import pl.lukaszlebiecki.paragraphgame.domain.playerCard.PlayerCardDao;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class PlayerCardService {
     private final PlayerCardDao playerCardDao = new PlayerCardDao();
 
@@ -21,8 +18,7 @@ public class PlayerCardService {
                     p.getAge(),
                     p.getSex(),
                     p.getResidence(),
-                    p.getBirthplace()
-            );
+                    p.getBirthplace());
         }
     }
 }

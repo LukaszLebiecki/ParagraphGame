@@ -6,8 +6,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 public class PlayerCardDao extends BaseDao {
 
@@ -39,6 +37,6 @@ public class PlayerCardDao extends BaseDao {
         String residence = set.getString("residence");
         String birthplace = set.getString("birthplace");
 
-        return new PlayerCard(users_id, name, occupation, age, sex, residence, birthplace);
+        return  new PlayerCard(users_id, name, occupation, age, sex, residence, birthplace);
     }
 }

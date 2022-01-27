@@ -24,7 +24,8 @@ public class CharacteristicsDao extends BaseDao {
             moverate, 
             hitpoints, 
             sanity, 
-            luck
+            luck,
+            magic_point
             FROM
             characteristics
             WHERE

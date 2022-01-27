@@ -12,11 +12,65 @@ public class UserDao extends BaseDao {
     public void save(User user) {
         saveUser(user);
         saveUserRole(user);
+        savePlayerCardForUser(user);
+        saveCharacteristicsForUser(user);
+        saveSkillsForUser(user);
     }
 
 
     public void update(int userId, int newParagraphMainId) {
         updateParagraphMainId(userId, newParagraphMainId);
+    }
+
+    private void saveSkillsForUser(User user) {
+        final String query = String.format("""
+                INSERT INTO
+                skills (users_id)
+                VALUES
+                (%d)
+                """, user.getUserId());
+        try (
+                Connection connection = getConnection();
+                PreparedStatement statement = connection.prepareStatement(query)
+        ) {
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void saveCharacteristicsForUser(User user) {
+        final String query = String.format("""
+                INSERT INTO
+                characteristics (users_id)
+                VALUES
+                (%d)
+                """,user.getUserId());
+        try (
+                Connection connection = getConnection();
+                PreparedStatement statement = connection.prepareStatement(query)
+        ) {
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void savePlayerCardForUser(User user) {
+        final String query = String.format("""
+                INSERT INTO
+                player_card (users_id)
+                VALUES
+                (%d)
+                """,user.getUserId());
+        try (
+                Connection connection = getConnection();
+                PreparedStatement statement = connection.prepareStatement(query)
+        ) {
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void saveUser(User user) {
@@ -26,7 +80,6 @@ public class UserDao extends BaseDao {
                 VALUES
                 (?, ?, ?, ?, ?)
                 """;
-
         try (
                 Connection connection = getConnection();
                 PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {

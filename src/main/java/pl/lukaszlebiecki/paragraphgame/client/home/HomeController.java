@@ -29,16 +29,16 @@ public class HomeController extends HttpServlet {
             UserBasicInfo user = userService.findUser(request.getUserPrincipal().getName());
             ParagraphBasicInfo paragraph = paragraphs.get(user.getParagraphMainNumber());
             loadingData(request, user, paragraph);
+
+            PlayerCardBasicInfo playerCard = playerCardService.find(user.getUserId());
+            request.setAttribute("playerCard", playerCard);
+
+            CharacteristicsBasicInfo characteristics = characteristicsService.find(user.getUserId());
+            request.setAttribute("characteristics", characteristics);
+
+            SkillsBasicInfo skills = skillsService.find(user.getUserId());
+            request.setAttribute("skills", skills);
         }
-
-//        PlayerCardBasicInfo playerCard = playerCardService.find(userId);
-//        request.setAttribute("playerCard", playerCard);
-
-//        CharacteristicsBasicInfo characteristics = characteristicsService.find(userId);
-//        request.setAttribute("characteristics", characteristics);
-
-//        SkillsBasicInfo skills = skillsService.find(userId);
-//        request.setAttribute("skills", skills);
 
         request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
     }

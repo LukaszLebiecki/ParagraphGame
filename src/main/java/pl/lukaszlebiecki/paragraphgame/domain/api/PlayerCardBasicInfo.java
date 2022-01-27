@@ -10,6 +10,8 @@ public class PlayerCardBasicInfo {
     private String residence;
     private String birthplace;
 
+    public PlayerCardBasicInfo() {
+    }
 
     public PlayerCardBasicInfo(String namePlayer, String occupation, Integer age, PlayerSex sex, String residence, String birthplace) {
         this.namePlayer = namePlayer;
