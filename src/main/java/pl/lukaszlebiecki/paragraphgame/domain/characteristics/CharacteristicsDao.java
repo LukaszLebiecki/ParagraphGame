@@ -2,10 +2,7 @@ package pl.lukaszlebiecki.paragraphgame.domain.characteristics;
 
 import pl.lukaszlebiecki.paragraphgame.domain.common.BaseDao;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class CharacteristicsDao extends BaseDao {
 
@@ -65,5 +62,38 @@ public class CharacteristicsDao extends BaseDao {
         int magic_point = set.getInt("magic_point");
         return new Characteristics(users_id, strength, skill, power, condition, appearance, education, physique, intelligence,
                 moverate, hitpoints, sanity, luck, magic_point );
+    }
+
+    public void update(int userId, Integer strength, Integer skill, Integer power, Integer condition,
+                       Integer appearance, Integer education, Integer physique, Integer intelligence,
+                       Integer moveRate, Integer hitPoints, Integer sanity, Integer luck, Integer magic_point) {
+        final String query = String.format("""
+                UPDATE
+                characteristics
+                SET
+                strength = %d,
+                skill = %d,
+                power = %d,
+                condit = %d,
+                appearance = %d,
+                education = %d,
+                physique = %d,
+                intelligence = %d,
+                moverate = %d,
+                hitpoints = %d,
+                sanity = %d,
+                luck = %d,
+                magic_point = %d
+                WHERE
+                users_id = %d
+                """, strength, skill, power, condition, appearance, education,
+                physique, intelligence, moveRate, hitPoints, sanity, luck, magic_point, userId);
+
+        try ( Connection connection = getConnection();
+              PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

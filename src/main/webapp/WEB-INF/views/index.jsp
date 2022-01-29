@@ -38,7 +38,7 @@
     </nav>
     <div id="content">
         <div class="article column1">
-            <form action="#">
+            <form action="save_player_card" method="post">
                 <h3>Karta badacza</h3>
                 <div>
                     <button class="update-button">Uaktualnij</button>
@@ -59,8 +59,16 @@
                     <div>
                         <label for="sex" class="title">Płeć</label>
                         <select name="sex" id="sex">
-                            <option value="male">Mężczyzna</option>
-                            <option value="female">Kobieta</option>
+                            <c:choose>
+                                <c:when test="${requestScope.playerCard.sex.name().equals('MALE')}">
+                                    <option value="MALE" selected="selected">Mężczyzna</option>
+                                    <option value="FEMALE">Kobieta</option>
+                                </c:when>
+                                <c:when test="${requestScope.playerCard.sex.name().equals('FEMALE')}">
+                                    <option value="MALE" selected="selected">Mężczyzna</option>
+                                    <option value="FEMALE" selected="selected">Kobieta</option>
+                                </c:when>
+                            </c:choose>
                         </select>
                     </div>
                     <div>
@@ -77,68 +85,230 @@
                             <div>
                                 <label for="strength">S</label>
                                 <input class="cech-point" placeholder="${requestScope.characteristics.strength}" type="number" name="strength" id="strength" min="0" max="100">
-                                <a>1/2</a>
-                                <a>1/5</a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.strength}">
+                                            ${requestScope.characteristics.halfNumber(requestScope.characteristics.strength)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.strength}">
+                                            &#189
+                                        </c:when>
+                                    </c:choose>
+                                </a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.strength}">
+                                            ${requestScope.characteristics.fifthNumber(requestScope.characteristics.strength)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.strength}">
+                                            &#8533
+                                        </c:when>
+                                    </c:choose>
+                                </a>
                             </div>
                             <div>
                                 <label for="skill">ZR</label>
                                 <input class="cech-point" placeholder="${requestScope.characteristics.skill}" type="number" name="skill" id="skill" min="0" max="100">
-                                <a>1/2</a>
-                                <a>1/5</a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.skill}">
+                                            ${requestScope.characteristics.halfNumber(requestScope.characteristics.skill)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.skill}">
+                                            &#189
+                                        </c:when>
+                                    </c:choose>
+                                </a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.skill}">
+                                            ${requestScope.characteristics.fifthNumber(requestScope.characteristics.skill)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.skill}">
+                                            &#8533
+                                        </c:when>
+                                    </c:choose>
+                                </a>
                             </div>
                             <div>
                                 <label for="power">MOC</label>
                                 <input class="cech-point" placeholder="${requestScope.characteristics.power}" type="number" name="power" id="power" min="0" max="100">
-                                <a>1/2</a>
-                                <a>1/5</a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.power}">
+                                            ${requestScope.characteristics.halfNumber(requestScope.characteristics.power)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.power}">
+                                            &#189
+                                        </c:when>
+                                    </c:choose>
+                                </a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.power}">
+                                            ${requestScope.characteristics.fifthNumber(requestScope.characteristics.power)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.power}">
+                                            &#8533
+                                        </c:when>
+                                    </c:choose>
+                                </a>
                             </div>
                         </div>
                         <div class="article cech-line">
                             <div>
                                 <label for="condition">KON</label>
                                 <input class="cech-point" placeholder="${requestScope.characteristics.condition}" type="number" name="condition" id="condition" min="0" max="100">
-                                <a>1/2</a>
-                                <a>1/5</a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.condition}">
+                                            ${requestScope.characteristics.halfNumber(requestScope.characteristics.condition)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.condition}">
+                                            &#189
+                                        </c:when>
+                                    </c:choose>
+                                </a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.condition}">
+                                            ${requestScope.characteristics.fifthNumber(requestScope.characteristics.condition)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.condition}">
+                                            &#8533
+                                        </c:when>
+                                    </c:choose>
+                                </a>
                             </div>
                             <div>
                                 <label for="appearance">WYG</label>
                                 <input class="cech-point" placeholder="${requestScope.characteristics.appearance}" type="number" name="appearance" id="appearance" min="0" max="100">
-                                <a>1/2</a>
-                                <a>1/5</a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.appearance}">
+                                            ${requestScope.characteristics.halfNumber(requestScope.characteristics.appearance)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.appearance}">
+                                            &#189
+                                        </c:when>
+                                    </c:choose>
+                                </a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.appearance}">
+                                            ${requestScope.characteristics.fifthNumber(requestScope.characteristics.appearance)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.appearance}">
+                                            &#8533
+                                        </c:when>
+                                    </c:choose>
+                                </a>
                             </div>
                             <div>
                                 <label for="education">WYK</label>
                                 <input class="cech-point" placeholder="${requestScope.characteristics.education}" type="number" name="education" id="education" min="0" max="100">
-                                <a>1/2</a>
-                                <a>1/5</a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.education}">
+                                            ${requestScope.characteristics.halfNumber(requestScope.characteristics.education)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.education}">
+                                            &#189
+                                        </c:when>
+                                    </c:choose>
+                                </a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.education}">
+                                            ${requestScope.characteristics.fifthNumber(requestScope.characteristics.education)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.education}">
+                                            &#8533
+                                        </c:when>
+                                    </c:choose>
+                                </a>
                             </div>
                         </div>
                         <div class="article cech-line">
                             <div>
                                 <label for="physique">BC</label>
                                 <input class="cech-point" placeholder="${requestScope.characteristics.physique}" type="number" name="physique" id="physique" min="0" max="100">
-                                <a>1/2</a>
-                                <a>1/5</a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.physique}">
+                                            ${requestScope.characteristics.halfNumber(requestScope.characteristics.physique)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.physique}">
+                                            &#189
+                                        </c:when>
+                                    </c:choose>
+                                </a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.physique}">
+                                            ${requestScope.characteristics.fifthNumber(requestScope.characteristics.physique)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.physique}">
+                                            &#8533
+                                        </c:when>
+                                    </c:choose>
+                                </a>
                             </div>
                             <div>
                                 <label for="intelligence">INT</label>
                                 <input class="cech-point" placeholder="${requestScope.characteristics.intelligence}" type="number" name="intelligence" id="intelligence" min="0" max="100">
-                                <a>1/2</a>
-                                <a>1/5</a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.intelligence}">
+                                            ${requestScope.characteristics.halfNumber(requestScope.characteristics.intelligence)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.intelligence}">
+                                            &#189
+                                        </c:when>
+                                    </c:choose>
+                                </a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.intelligence}">
+                                            ${requestScope.characteristics.fifthNumber(requestScope.characteristics.intelligence)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.intelligence}">
+                                            &#8533
+                                        </c:when>
+                                    </c:choose>
+                                </a>
                             </div>
                             <div>
                                 <label for="moveRate">Ruch</label>
                                 <input class="cech-point" placeholder="${requestScope.characteristics.moveRate}" type="number" name="moveRate" id="moveRate" min="0" max="100">
-                                <a>1/2</a>
-                                <a>1/5</a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.moveRate}">
+                                            ${requestScope.characteristics.halfNumber(requestScope.characteristics.moveRate)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.moveRate}">
+                                            &#189
+                                        </c:when>
+                                    </c:choose>
+                                </a>
+                                <a>
+                                    <c:choose>
+                                        <c:when test="${not empty requestScope.characteristics.moveRate}">
+                                            ${requestScope.characteristics.fifthNumber(requestScope.characteristics.moveRate)}
+                                        </c:when>
+                                        <c:when test="${empty requestScope.characteristics.moveRate}">
+                                            &#8533
+                                        </c:when>
+                                    </c:choose>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <h3>_</h3>
                     <div>
                         <div>
-                            <label for="hit-points" class="title2">Punkty wytrzymałości</label>
-                            <input class="cech-point" placeholder="${requestScope.characteristics.hitPoints}" type="number" name="hit-points" id="hit-points" min="0" max="20">
+                            <label for="hit_points" class="title2">Punkty wytrzymałości</label>
+                            <input class="cech-point" placeholder="${requestScope.characteristics.hitPoints}" type="number" name="hit_points" id="hit_points" min="0" max="20">
                         </div>
                         <div>
                             <label for="sanity" class="title2">Poczytalność</label>
@@ -150,7 +320,7 @@
                         </div>
                         <div>
                             <label for="magic_points" class="title2">Punkty magii</label>
-                            <input class="cech-point" placeholder="${requestScope.characteristics.luck}" type="number" name="magic_points" id="magic_points" min="0" max="24">
+                            <input class="cech-point" placeholder="${requestScope.characteristics.magic_point}" type="number" name="magic_points" id="magic_points" min="0" max="24">
                         </div>
                     </div>
                     <div>

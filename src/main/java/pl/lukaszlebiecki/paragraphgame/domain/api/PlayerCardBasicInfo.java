@@ -46,4 +46,27 @@ public class PlayerCardBasicInfo {
         return birthplace;
     }
 
+    public void setNamePlayer(String namePlayer) {
+        this.namePlayer = namePlayer;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public void setSex(PlayerSex sex) {
+        this.sex = sex;
+    }
+
+    public void setResidence(String residence) {
+        this.residence = residence;
+    }
+
+    public void setBirthplace(String birthplace) {
+        this.birthplace = birthplace;
+    }
 }

@@ -84,4 +84,64 @@ public class CharacteristicsBasicInfo {
     public Integer getMagic_point() {
         return magic_point;
     }
+
+    public void setStrength(Integer strength) {
+        this.strength = strength;
+    }
+
+    public void setSkill(Integer skill) {
+        this.skill = skill;
+    }
+
+    public void setPower(Integer power) {
+        this.power = power;
+    }
+
+    public void setCondition(Integer condition) {
+        this.condition = condition;
+    }
+
+    public void setAppearance(Integer appearance) {
+        this.appearance = appearance;
+    }
+
+    public void setEducation(Integer education) {
+        this.education = education;
+    }
+
+    public void setPhysique(Integer physique) {
+        this.physique = physique;
+    }
+
+    public void setIntelligence(Integer intelligence) {
+        this.intelligence = intelligence;
+    }
+
+    public void setMoveRate(Integer moveRate) {
+        this.moveRate = moveRate;
+    }
+
+    public void setHitPoints(Integer hitPoints) {
+        this.hitPoints = hitPoints;
+    }
+
+    public void setSanity(Integer sanity) {
+        this.sanity = sanity;
+    }
+
+    public void setLuck(Integer luck) {
+        this.luck = luck;
+    }
+
+    public void setMagic_point(Integer magic_point) {
+        this.magic_point = magic_point;
+    }
+
+    public int halfNumber(int number) {
+        return number/2;
+    }
+
+    public int fifthNumber(int number) {
+        return number/5;
+    }
 }
