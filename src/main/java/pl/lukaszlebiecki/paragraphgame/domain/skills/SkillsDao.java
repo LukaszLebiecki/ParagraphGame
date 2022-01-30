@@ -2,10 +2,7 @@ package pl.lukaszlebiecki.paragraphgame.domain.skills;
 
 import pl.lukaszlebiecki.paragraphgame.domain.common.BaseDao;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class SkillsDao extends BaseDao {
 
@@ -125,5 +122,79 @@ public class SkillsDao extends BaseDao {
                 law, driving, psychology, throwing, jumping, observation, survival, ironwork, tracking, hiding,
                 dodge, personal_charm, hand_combat, knowledge_of_nature, climbing, quotation,
                 bullying, skillful_fingers);
+    }
+
+    public void update(int userId, Integer anthropology, Integer archeology, Integer firearm, Integer disguise,
+                       Integer electricity, Integer talk, Integer history, Integer horseRiding, Integer foreignLanguage,
+                       Integer nativeLanguage, Integer useLibraries, Integer bookkeeping, Integer wealth,
+                       Integer mechanics, Integer medicine, Integer cthulhu, Integer listening, Integer science,
+                       Integer navigation, Integer occultism, Integer persuasion, Integer firstAid, Integer swimming,
+                       Integer law, Integer driving, Integer psychology, Integer throwing, Integer jumping,
+                       Integer observation, Integer survival, Integer ironwork, Integer tracking, Integer hiding,
+                       Integer dodge, Integer personalCharm, Integer handCombat, Integer knowledgeOfNature,
+                       Integer climbing, Integer quotation, Integer bullying, Integer skillfulFingers) {
+        final String query = String.format("""
+                UPDATE
+                skills
+                SET
+                anthropology = %d,
+                archeology = %d,
+                firearm = %d,
+                disguise = %d,
+                electricity = %d,
+                talk = %d,
+                history = %d,
+                horse_riding = %d,
+                foreign_language = %d,
+                native_language = %d,
+                use_libraries = %d,
+                bookkeeping = %d,
+                wealth = %d,
+                mechanics = %d,
+                medicine = %d,
+                cthulhu = %d,
+                listening = %d,
+                science = %d,
+                navigation = %d,
+                occultism = %d,
+                persuasion = %d,
+                first_aid = %d,
+                swimming = %d,
+                law = %d,
+                driving = %d,
+                psychology = %d,
+                throwing = %d,
+                jumping = %d,
+                observation = %d,
+                survival = %d,
+                ironwork = %d,
+                tracking = %d,
+                hiding = %d,
+                dodge = %d,
+                personal_charm = %d,
+                hand_combat = %d,
+                knowledge_of_nature = %d,
+                climbing = %d,
+                quotation = %d,
+                bullying = %d,
+                skillful_fingers = %d
+                WHERE
+                users_id = %d
+                """, anthropology, archeology, firearm, disguise,
+                electricity, talk, history, horseRiding, foreignLanguage,
+                nativeLanguage, useLibraries, bookkeeping, wealth,
+                mechanics, medicine, cthulhu, listening, science,
+                navigation, occultism, persuasion, firstAid, swimming,
+                law, driving, psychology, throwing, jumping,
+                observation, survival, ironwork, tracking, hiding,
+                dodge, personalCharm, handCombat, knowledgeOfNature,
+                climbing, quotation, bullying, skillfulFingers, userId);
+
+        try ( Connection connection = getConnection();
+              PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

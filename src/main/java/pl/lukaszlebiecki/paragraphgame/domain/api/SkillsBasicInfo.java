@@ -260,4 +260,168 @@ public class SkillsBasicInfo {
     public Integer getSkillfulFingers() {
         return skillfulFingers;
     }
+
+    public void setAnthropology(Integer anthropology) {
+        this.anthropology = anthropology;
+    }
+
+    public void setArcheology(Integer archeology) {
+        this.archeology = archeology;
+    }
+
+    public void setFirearm(Integer firearm) {
+        this.firearm = firearm;
+    }
+
+    public void setDisguise(Integer disguise) {
+        this.disguise = disguise;
+    }
+
+    public void setElectricity(Integer electricity) {
+        this.electricity = electricity;
+    }
+
+    public void setTalk(Integer talk) {
+        this.talk = talk;
+    }
+
+    public void setHistory(Integer history) {
+        this.history = history;
+    }
+
+    public void setHorseRiding(Integer horseRiding) {
+        this.horseRiding = horseRiding;
+    }
+
+    public void setForeignLanguage(Integer foreignLanguage) {
+        this.foreignLanguage = foreignLanguage;
+    }
+
+    public void setNativeLanguage(Integer nativeLanguage) {
+        this.nativeLanguage = nativeLanguage;
+    }
+
+    public void setUseLibraries(Integer useLibraries) {
+        this.useLibraries = useLibraries;
+    }
+
+    public void setBookkeeping(Integer bookkeeping) {
+        this.bookkeeping = bookkeeping;
+    }
+
+    public void setWealth(Integer wealth) {
+        this.wealth = wealth;
+    }
+
+    public void setMechanics(Integer mechanics) {
+        this.mechanics = mechanics;
+    }
+
+    public void setMedicine(Integer medicine) {
+        this.medicine = medicine;
+    }
+
+    public void setCthulhu(Integer cthulhu) {
+        this.cthulhu = cthulhu;
+    }
+
+    public void setListening(Integer listening) {
+        this.listening = listening;
+    }
+
+    public void setScience(Integer science) {
+        this.science = science;
+    }
+
+    public void setNavigation(Integer navigation) {
+        this.navigation = navigation;
+    }
+
+    public void setOccultism(Integer occultism) {
+        this.occultism = occultism;
+    }
+
+    public void setPersuasion(Integer persuasion) {
+        this.persuasion = persuasion;
+    }
+
+    public void setFirstAid(Integer firstAid) {
+        this.firstAid = firstAid;
+    }
+
+    public void setSwimming(Integer swimming) {
+        this.swimming = swimming;
+    }
+
+    public void setLaw(Integer law) {
+        this.law = law;
+    }
+
+    public void setDriving(Integer driving) {
+        this.driving = driving;
+    }
+
+    public void setPsychology(Integer psychology) {
+        this.psychology = psychology;
+    }
+
+    public void setThrowing(Integer throwing) {
+        this.throwing = throwing;
+    }
+
+    public void setJumping(Integer jumping) {
+        this.jumping = jumping;
+    }
+
+    public void setObservation(Integer observation) {
+        this.observation = observation;
+    }
+
+    public void setSurvival(Integer survival) {
+        this.survival = survival;
+    }
+
+    public void setIronwork(Integer ironwork) {
+        this.ironwork = ironwork;
+    }
+
+    public void setTracking(Integer tracking) {
+        this.tracking = tracking;
+    }
+
+    public void setHiding(Integer hiding) {
+        this.hiding = hiding;
+    }
+
+    public void setDodge(Integer dodge) {
+        this.dodge = dodge;
+    }
+
+    public void setPersonalCharm(Integer personalCharm) {
+        this.personalCharm = personalCharm;
+    }
+
+    public void setHandCombat(Integer handCombat) {
+        this.handCombat = handCombat;
+    }
+
+    public void setKnowledgeOfNature(Integer knowledgeOfNature) {
+        this.knowledgeOfNature = knowledgeOfNature;
+    }
+
+    public void setClimbing(Integer climbing) {
+        this.climbing = climbing;
+    }
+
+    public void setQuotation(Integer quotation) {
+        this.quotation = quotation;
+    }
+
+    public void setBullying(Integer bullying) {
+        this.bullying = bullying;
+    }
+
+    public void setSkillfulFingers(Integer skillfulFingers) {
+        this.skillfulFingers = skillfulFingers;
+    }
 }
