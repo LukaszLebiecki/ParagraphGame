@@ -1353,42 +1353,42 @@
         </div>
         <div class="article column3">
             <h3>Panel kości</h3>
-            <form>
+            <form action="bones" method="get">
                 <div class="bones">
                     <div>
                         <input type="checkbox" id="k100" name="k100" value="k100">
                         <label class="title3" for="k100">K 100</label>
-                        <a class="k100">-54-</a>
+                        <a class="k100">-${requestScope.k100}-</a>
                     </div>
                     <div>
-                        <input type="checkbox" id="k6-1" name="k6-1" value="k6-1">
-                        <label class="title3" for="k6-1">K 6</label>
-                        <a>-6-</a>
+                        <input type="checkbox" id="k61" name="k61" value="k61">
+                        <label class="title3" for="k61">K 6</label>
+                        <a>-${requestScope.k61}-</a>
                     </div>
                     <div>
-                        <input type="checkbox" id="k6-2" name="k6-2" value="k6-2">
-                        <label class="title3" for="k6-2">K 6</label>
-                        <a>-6-</a>
+                        <input type="checkbox" id="k62" name="k62" value="k62">
+                        <label class="title3" for="k62">K 6</label>
+                        <a>-${requestScope.k62}-</a>
                     </div>
                     <div>
-                        <input type="checkbox" id="k6-3" name="k6-3" value="k6-3">
-                        <label class="title3" for="k6-3">K 6</label>
-                        <a>-6-</a>
+                        <input type="checkbox" id="k63" name="k63" value="k63">
+                        <label class="title3" for="k63">K 6</label>
+                        <a>-${requestScope.k63}-</a>
                     </div>
                     <div>
                         <input type="checkbox" id="k4" name="k4" value="k4">
                         <label class="title3" for="k4">K 4</label>
-                        <a>-4-</a>
+                        <a>-${requestScope.k4}-</a>
                     </div>
                     <div>
                         <input type="checkbox" id="k3" name="k3" value="k3">
                         <label class="title3" for="k3">K 3</label>
-                        <a>-3-</a>
+                        <a>-${requestScope.k3}-</a>
                     </div>
                     <div>
                         <input type="checkbox" id="k2" name="k2" value="k2">
                         <label class="title3" for="k2">K 2</label>
-                        <a>-2-</a>
+                        <a>-${requestScope.k2}-</a>
                     </div>
                     <button>Rzuć kośćmi</button>
                 </div>
