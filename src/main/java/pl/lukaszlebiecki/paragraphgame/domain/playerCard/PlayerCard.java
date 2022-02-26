@@ -2,12 +2,12 @@ package pl.lukaszlebiecki.paragraphgame.domain.playerCard;
 
 public class PlayerCard {
     private Integer userId;
-    private String namePlayer;
-    private String occupation;
+    private String namePlayer = "";
+    private String occupation = "";
     private Integer age;
-    private PlayerSex sex;
-    private String residence;
-    private String birthplace;
+    private PlayerSex sex = PlayerSex.MALE;
+    private String residence = "";
+    private String birthplace = "";
 
     public PlayerCard(Integer userId, String namePlayer, String occupation, Integer age, PlayerSex sex, String residence, String birthplace) {
         this.userId = userId;

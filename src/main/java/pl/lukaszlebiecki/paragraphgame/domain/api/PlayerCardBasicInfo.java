@@ -3,12 +3,12 @@ package pl.lukaszlebiecki.paragraphgame.domain.api;
 import pl.lukaszlebiecki.paragraphgame.domain.playerCard.PlayerSex;
 
 public class PlayerCardBasicInfo {
-    private String namePlayer;
-    private String occupation;
+    private String namePlayer = "";
+    private String occupation = "";
     private Integer age;
     private PlayerSex sex;
-    private String residence;
-    private String birthplace;
+    private String residence = "";
+    private String birthplace = "";
 
     public PlayerCardBasicInfo() {
     }

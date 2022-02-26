@@ -66,6 +66,8 @@ public class HomeController extends HttpServlet {
 
 
         request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
+
+
     }
 
     @Override
@@ -76,12 +78,12 @@ public class HomeController extends HttpServlet {
         String next_paragraph = request.getParameter("next_paragraph");
         int nextParagraph = Integer.parseInt(next_paragraph);
         ParagraphBasicInfo paragraph = paragraphs.get(nextParagraph - 1);
-        userService.updateParagraph(13, nextParagraph);
+        userService.updateParagraph(user.getUserId(), nextParagraph);
 
         loadingData(request, user, paragraph);
 
 
-        request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
+        response.sendRedirect(request.getContextPath());
     }
 
     private void loadingData(HttpServletRequest request, UserBasicInfo user, ParagraphBasicInfo paragraph) {
